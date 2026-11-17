@@ -1,124 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seungho Yeom</title>
-  <meta name="author" content="Seungho Yeom">
-  <meta name="description" content="Seungho (Sean) Yeom: robot learning for humanoid whole-body control and long-horizon manipulation.">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-  <link rel="shortcut icon" href="images/favicon/favicon.ico">
-  <link rel="stylesheet" href="stylesheet.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seungho Yeom</title>
+<meta name="author" content="Seungho Yeom">
+<meta name="description" content="Seungho (Sean) Yeom: robot learning for humanoid whole-body control and long-horizon manipulation.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<link rel="shortcut icon" href="images/favicon/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Lato',Verdana,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222;background:#fff}
+a{color:#1772d0;text-decoration:none}a:hover{color:#f09228}
+.page{max-width:820px;margin:0 auto;padding:24px 16px 40px}
+.header{display:flex;gap:32px;align-items:center}.header-text{flex:1}.header-photo{flex:0 0 30%}
+.header-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block}
+.name{font-size:32px;font-weight:400;text-align:center;margin:0 0 12px}.links{text-align:center}
+h2{font-size:22px;font-weight:400;margin:36px 0 8px}
+.interests li{margin:4px 0}
+.news{list-style:none;padding:0;margin:0}.news li{display:flex;gap:16px;padding:4px 0}.news .date{flex:0 0 80px;color:#666;white-space:nowrap}
+.news li.extra{display:none}.news.open li.extra{display:flex}
+.toggle{background:none;border:0;padding:4px 0;font:inherit;color:#1772d0;cursor:pointer}.toggle:hover{color:#f09228}
+.legend{margin:0 0 8px;color:#666;font-size:13px}
+.entry{display:flex;gap:24px;align-items:center;padding:14px 0}.media{flex:0 0 200px}.body{flex:1}.body p{margin:8px 0 0}
+.media video,.media img{width:200px;border-radius:6px;display:block}
+.tile{width:200px;height:120px;border-radius:6px;background:#eef3f9;color:#1f4e79;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:18px;padding:0 10px;box-sizing:border-box}
+.papertitle{font-weight:700}.me{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.award{color:#b5520b;font-weight:700}
+footer{margin-top:32px;text-align:right;color:#666;font-size:13px}
+/* click-to-zoom */
+.zoomable{cursor:zoom-in}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out;padding:16px;box-sizing:border-box}
+#lightbox.show{display:flex}
+#lightbox img,#lightbox video{max-width:95vw;max-height:90vh;border-radius:6px;display:block}
+@media(max-width:640px){.header,.entry{flex-direction:column;align-items:stretch}.header{flex-direction:column-reverse}.header-photo{width:55%;margin:0 auto}.media video,.media img,.tile{width:100%}}
+</style>
 </head>
-<body>
-<main class="page">
+<body><main class="page">
+  <section class="header"><div class="header-text">
+    <h1 class="name">Seungho (Sean) Yeom</h1>
+    <p>Hi, I'm Seungho (Sean) Yeom, an undergraduate research intern in the <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab (ARCLab)</a> at UC San Diego, advised by <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>, and a mechanical engineering undergraduate at Yonsei University.</p>
+    <p>I am looking for PhD opportunities starting in Fall 2027.</p>
+    <p>Previously, I was an undergraduate research intern in the <a href="https://mlcs.yonsei.ac.kr/">Machine Learning and Control Systems (MLCS) Lab</a> at Yonsei University, advised by <a href="https://mlcs.yonsei.ac.kr/Professor.html">Prof. Jongeun Choi</a>.</p>
+    <p class="links"><a href="mailto:duatmdgh3@yonsei.ac.kr">Email</a> &nbsp;/&nbsp; <a href="https://www.linkedin.com/in/yeomseungho/">LinkedIn</a> &nbsp;/&nbsp; <a href="https://github.com/seanshyeom">GitHub</a> &nbsp;/&nbsp; <a href="https://scholar.google.com/citations?hl=en&amp;user=gBTwT6MAAAAJ">Google Scholar</a></p>
+  </div><div class="header-photo"><img class="zoomable" src="data/picture.jpg" alt="Photo of Seungho Yeom"></div></section>
 
-  <!-- ===================== Header ===================== -->
-  <section class="header">
-    <div class="header-text">
-      <h1 class="name">Seungho (Sean) Yeom</h1>
-      <p>
-        Hi, I'm Seungho (Sean) Yeom, a visiting undergraduate researcher in the
-        <a href="https://ucsdarclab.com/">Advanced Robotics and Controls Lab (ARCLab)</a>
-        at UC San Diego, advised by <a href="https://yip.eng.ucsd.edu/">Prof. Michael Yip</a>,  and a mechanical engineering undergraduate at Yonsei University.<br>
-        I work on compliant whole-body control for humanoid loco-manipulation and on policies and
-        world action models with memory for long-horizon tasks under partial observability.
-        I'm interested in using foundation models, especially agentic AI that uses vision-language
-        models (VLMs) to direct a whole-body controller, to help humanoids carry out long-horizon,
-        fine-grained tasks through compliant loco-manipulation.<br>
-        Previously, I was an undergraduate researcher in the
-        <a href="https://mlcs.yonsei.ac.kr/">Machine Learning and Control Systems (MLCS) Lab</a>
-        at Yonsei University, advised by <a href="https://mlcs.yonsei.ac.kr/Professor.html">Prof. Jongeun Choi</a>.
-      </p>
-      <p class="links">
-        <a href="mailto:duatmdgh3@yonsei.ac.kr">Email</a> &nbsp;/&nbsp;
-        <a href="data/CV_SeunghoYeom.pdf">CV</a> &nbsp;/&nbsp;
-        <a href="https://github.com/seanshyeom">GitHub</a> &nbsp;/&nbsp;
-        <a href="https://scholar.google.com/citations?hl=en&amp;user=gBTwT6MAAAAJ">Google Scholar</a>
-      </p>
-    </div>
-    <div class="header-photo">
-      <a href="data/picture.jpg"><img src="data/picture.jpg" alt="Photo of Seungho Yeom"></a>
-    </div>
-  </section>
+  <h2>Research Interests</h2>
+  <p>I'm interested in developing intelligent and physically capable robots through robot learning inspired by human cognition and behavior. My research combines compliant whole-body control for humanoids with memory-based policies and world models for long-horizon manipulation, and I am interested in bringing them together so that humanoids can carry out complex, long-horizon tasks through physical contact.</p>
+  <ul class="interests">
+    <li><b>Cognition-inspired robot learning</b>. Learning intelligent behaviors for humanoid whole-body control and manipulation inspired by how humans perceive, reason, and interact with the physical world.</li>
+    <li><b>Compliant physical interaction</b>. Developing control and manipulation strategies for dexterous, adaptive, and stable interactions with objects and environments.</li>
+    <li><b>Foundation models and analytical control</b>. Combining high-level reasoning and task understanding from foundation models with principled control methods for reliable physical execution.</li>
+  </ul>
 
-  <!-- ===================== Publications ===================== -->
-  <h2>Publications</h2>
-  <p class="legend">* equal contribution, &dagger; equal advising</p>
+  <h2>News</h2>
+  <ul class="news" id="news">
+    <li><span class="date">Nov 2026</span><span>&#127908; Gave a spotlight talk on <b>OCLO</b> at the <a href="https://contact-rich-loco-manipulation.github.io/">CoRL 2026 Workshop on Contact-Rich Loco-Manipulation</a>.</span></li>
+    <li><span class="date">Oct 2026</span><span>&#127942; <b>OCLO</b> received the Best Paper Award at the <a href="https://sites.google.com/view/iros2026ws-wbc">IROS 2026 Workshop on Bridging Learning and Physics for Robust Whole-Body Robot Control</a>.</span></li>
+    <li><span class="date">Oct 2026</span><span><b>OCLO</b> is now on <a href="https://arxiv.org/abs/2610.05678">arXiv</a>.</span></li>
+    <li><span class="date">Jun 2026</span><span><b>CAMP</b> is now on <a href="https://arxiv.org/abs/2606.21188">arXiv</a>.</span></li>
+    <li><span class="date">Apr 2026</span><span><b>LHD</b> was accepted to IEEE Robotics and Automation Letters (RA-L).</span></li>
+    <li class="extra"><span class="date">Dec 2025</span><span><b>LHD</b> is now on <a href="https://arxiv.org/abs/2512.13090">arXiv</a>.</span></li>
+    <li class="extra"><span class="date">Sep 2025</span><span>Joined <a href="https://ucsdarclab.com/">ARCLab</a> at UC San Diego as an undergraduate research intern.</span></li>
+    <li class="extra"><span class="date">Aug 2024</span><span>Joined the <a href="https://mlcs.yonsei.ac.kr/">MLCS Lab</a> at Yonsei University as an undergraduate research intern.</span></li>
+  </ul>
+  <button class="toggle" id="news-toggle" type="button" aria-controls="news" aria-expanded="false">Show all news</button>
 
-  <article class="entry">
-    <div class="media">
-      <video class="thumb" src="data/2026_oclo.mp4" poster="data/2026_oclo.jpg" autoplay muted loop playsinline preload="metadata"></video>
-    </div>
-    <div class="body">
-      <span class="papertitle">Dataset-Free Compliant Humanoid Loco-Manipulation with Dynamic Online Posture</span><br>
-      <strong class="me">Seungho Yeom</strong>, Zhenyu Wu*, Jaeyoung Huh*, Diego Williams*, Yuheng Zhi, Soofiyan Atar, Michael Yip<br>
-      <em>Under review, ICRA 2027</em><br>
-      <span class="award">Best Paper Award</span>, IROS 2026 Workshop on Bridging Learning and Physics for Robust Whole-Body Robot Control<br>
-      <a href="https://arxiv.org/abs/2610.05678">arXiv</a> / <a href="https://oclo-humanoid.github.io/">project page</a>
-    </div>
-  </article>
+  <h2>Publications</h2><p class="legend">* equal contribution, &dagger; equal advising</p>
 
-  <article class="entry">
-    <div class="media">
-      <video class="thumb" src="data/2026_camp.mp4" poster="data/2026_camp.jpg" autoplay muted loop playsinline preload="metadata"></video>
-    </div>
-    <div class="body">
-      <span class="papertitle">Remember What You Did?: Learning Behavioral Memories for Partially Observable Object Manipulation</span><br>
-      Kuancheng Wang, <strong class="me">Seungho Yeom</strong>*, Jinglin Cao*, Yuheng Zhi&dagger;, Nikhil Shinde&dagger;, Michael Yip<br>
-      <a href="https://arxiv.org/abs/2606.21188">arXiv</a> / <a href="https://robo-camp.github.io/">project page</a>
-    </div>
-  </article>
+  <article class="entry"><div class="media"><img class="zoomable" src="images/roboram.jpg" alt="RoboRAM teaser figure"></div><div class="body">
+    <span class="papertitle">Random Access Memories: Robot Memory Realignment to Robustly Handle Task-Progress Perturbation at Test Time</span><br>Kuancheng Wang, <span class="me">Seungho Yeom</span>, Yuheng Zhi, Nikhil Uday Shinde, Sainan Liu, Michael C. Yip<br><em>Under review</em>
+  </div></article>
 
-  <article class="entry">
-    <div class="media">
-      <video class="thumb" src="data/LHD_sim_real.mp4" poster="data/LHD.jpg" autoplay muted loop playsinline preload="metadata"></video>
-    </div>
-    <div class="body">
-      <span class="papertitle">Multi-Robot Motion Planning from Vision and Language using Heat-Inspired Diffusion</span><br>
-      Jebeom Chae*, Junwoo Chang*, <strong class="me">Seungho Yeom</strong>, Yujin Kim, Jongeun Choi<br>
-      <em>IEEE Robotics and Automation Letters (RA-L), 2026</em><br>
-      <a href="https://arxiv.org/abs/2512.13090">arXiv</a> / <a href="https://jebeom.github.io/lhd_project_page/">project page</a>
-    </div>
-  </article>
+  <article class="entry"><div class="media"><img class="zoomable" src="images/look_again.jpg" alt="Look Again framework figure"></div><div class="body">
+    <span class="papertitle">Look Again, Act Through Occlusion: World-Model-Guided Visual Recovery for Frozen Humanoid VLAs</span><br>Jaeyoung Huh, <span class="me">Seungho Yeom</span>, Michael C. Yip<br><em>Under review</em>
+  </div></article>
 
-  <!-- ===================== Projects ===================== -->
+  <article class="entry"><div class="media"><video class="zoomable" src="data/2026_oclo.mp4" poster="data/2026_oclo.jpg" autoplay muted loop playsinline preload="metadata"></video></div><div class="body">
+    <span class="papertitle">Dataset-Free Compliant Humanoid Loco-Manipulation with Dynamic Online Posture</span><br><span class="me">Seungho Yeom</span>, Zhenyu Wu*, Jaeyoung Huh*, Diego Williams*, Yuheng Zhi, Soofiyan Atar, Michael Yip<br><em>Under review, ICRA 2027</em><br>
+    <span class="award">&#127942; Best Paper Award</span>, <a href="https://sites.google.com/view/iros2026ws-wbc">IROS 2026 Workshop on Bridging Learning and Physics for Robust Whole-Body Robot Control</a><br>
+    <span class="award">&#127908; Spotlight Talk</span>, <a href="https://contact-rich-loco-manipulation.github.io/">CoRL 2026 Workshop on Contact-Rich Loco-Manipulation</a><br>
+    <a href="https://arxiv.org/abs/2610.05678">arXiv</a> / <a href="https://oclo-humanoid.github.io/">Project Page</a>
+  </div></article>
+
+  <article class="entry"><div class="media"><video class="zoomable" src="data/2026_camp.mp4" poster="data/2026_camp.jpg" autoplay muted loop playsinline preload="metadata"></video></div><div class="body">
+    <span class="papertitle">Remember What You Did?: Learning Behavioral Memories for Partially Observable Object Manipulation</span><br>Kuancheng Wang, <span class="me">Seungho Yeom</span>*, Jinglin Cao*, Yuheng Zhi&dagger;, Nikhil Shinde&dagger;, Michael Yip<br><em>arXiv preprint, 2026</em><br>
+    <span class="award">&#127908; Spotlight Talk</span>, <a href="https://corl2026-memory.github.io/">CoRL 2026 Workshop on Memory for Robot Foundation Models</a><br>
+    <a href="https://arxiv.org/abs/2606.21188">arXiv</a> / <a href="https://robo-camp.github.io/">Project Page</a>
+  </div></article>
+
+  <article class="entry"><div class="media"><video class="zoomable" src="data/LHD_sim_real.mp4" poster="data/LHD.jpg" autoplay muted loop playsinline preload="metadata"></video></div><div class="body">
+    <span class="papertitle">Multi-Robot Motion Planning from Vision and Language using Heat-Inspired Diffusion</span><br>Jebeom Chae*, Junwoo Chang*, <span class="me">Seungho Yeom</span>, Yujin Kim, Jongeun Choi<br><em>IEEE Robotics and Automation Letters (RA-L), 2026</em><br>
+    <a href="https://arxiv.org/abs/2512.13090">arXiv</a> / <a href="https://jebeom.github.io/lhd_project_page/">Project Page</a>
+  </div></article>
+
   <h2>Projects</h2>
 
-  <article class="entry">
-    <div class="media"><img class="thumb" src="images/Re-ACT.gif" alt="Re-ACT running on the RB-Y1"></div>
-    <div class="body">
-      <span class="papertitle">Re-ACT on Sensing: Force-Aware Action Chunking with Responsive Temporal Ensemble for Robot Manipulation</span><br>
-      <em>Project lead, graduate course (Machine Learning and Programming), Yonsei University</em><br>
-      <a href="data/Re-ACT_paper.pdf">paper</a> / <a href="https://github.com/dwightshyeom/Re-ACT">code</a>
-      <p>Inspired by how quickly people react when pushed, Re-ACT re-weights the temporal ensemble of Action Chunking with Transformers toward recent action chunks when a force-torque sensor detects an external force. Validated on the Rainbow Robotics RB-Y1 mobile bimanual manipulator.</p>
-    </div>
-  </article>
+  <article class="entry"><div class="media"><img class="zoomable" src="images/Re-ACT.gif" alt="Re-ACT running on the RB-Y1"></div><div class="body">
+    <span class="papertitle">Re-ACT on Sensing: Force-Aware Action Chunking with Responsive Temporal Ensemble for Robot Manipulation</span><br><em>Project lead, graduate course (Machine Learning and Programming), Yonsei University</em><br><a href="data/Re-ACT_paper.pdf">Paper</a> / <a href="https://github.com/dwightshyeom/Re-ACT">Code</a>
+    <p>Inspired by how quickly people react when pushed, Re-ACT re-weights the temporal ensemble of Action Chunking with Transformers toward recent action chunks when a force-torque sensor detects an external force. Validated on the Rainbow Robotics RB-Y1 mobile bimanual manipulator.</p>
+  </div></article>
 
-  <article class="entry">
-    <div class="media"><img class="thumb" src="images/A-You.gif" alt="A-You robot opening a cabinet in simulation"></div>
-    <div class="body">
-      <span class="papertitle">A-You (Assist-You Robot): A Wheelchair-Mounted Bimanual Manipulator</span><br>
-      <em>Project lead, graduate course (Human Robotics), Yonsei University</em>
-      <p>A foldable dual-arm robot mounted on a wheelchair that helps people with limited mobility perform everyday tasks on their own. I designed the 14-DOF robot, built its URDF, and controlled it in PyBullet.</p>
-    </div>
-  </article>
+  <article class="entry"><div class="media"><img class="zoomable" src="images/A-You.gif" alt="A-You robot opening a cabinet in simulation"></div><div class="body">
+    <span class="papertitle">A-You (Assist-You Robot): A Wheelchair-Mounted Bimanual Manipulator</span><br><em>Project lead, graduate course (Human Robotics), Yonsei University</em>
+    <p>A foldable dual-arm robot mounted on a wheelchair that helps people with limited mobility perform everyday tasks on their own. I designed the 14-DOF robot, built its URDF, and controlled it in PyBullet.</p>
+  </div></article>
 
-  <article class="entry">
-    <div class="media"><img class="thumb" src="images/Gait_Assistance_Robot.gif" alt="Gait assistance robot"></div>
-    <div class="body">
-      <span class="papertitle">Impedance-Controlled Gait Assistance Robot for Children with Poliomyelitis</span><br>
-      <em>MLCS Lab, Yonsei University</em>
-      <p>A gait-assistive robot that moves compliantly with the user to provide gentle, adaptive support. I contributed to the hardware design and validated the impedance control strategy.</p>
-    </div>
-  </article>
+  <article class="entry"><div class="media"><img class="zoomable" src="images/Gait_Assistance_Robot.gif" alt="Gait assistance robot"></div><div class="body">
+    <span class="papertitle">Impedance-Controlled Gait Assistance Robot for Children with Poliomyelitis</span><br><em>MLCS Lab, Yonsei University</em>
+    <p>A gait-assistive robot that moves compliantly with the user to provide gentle, adaptive support. I contributed to the hardware design and validated the impedance control strategy.</p>
+  </div></article>
 
-  <footer>
-    Website template adapted from <a href="https://jonbarron.info">Jon Barron</a>.
-  </footer>
-
+  <footer>Website template adapted from <a href="https://jonbarron.info">Jon Barron</a>.</footer>
 </main>
-</body>
-</html>
+
+<div id="lightbox" role="dialog" aria-label="Enlarged media"></div>
+
+<script>
+// News: show the five latest, toggle the rest
+(function () {
+  var list = document.getElementById('news'), btn = document.getElementById('news-toggle');
+  var hidden = list.querySelectorAll('li.extra').length;
+  if (!hidden) { btn.style.display = 'none'; return; }
+  btn.textContent = 'Show all news (' + hidden + ' more)';
+  btn.addEventListener('click', function () {
+    var open = list.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Show less' : 'Show all news (' + hidden + ' more)';
+  });
+})();
+
+// Click any image, GIF or video to enlarge it, click again or press Esc to close
+(function () {
+  var box = document.getElementById('lightbox');
+  function close() { box.classList.remove('show'); box.innerHTML = ''; }
+  document.querySelectorAll('.zoomable').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var big;
+      if (el.tagName === 'VIDEO') {
+        big = document.createElement('video');
+        big.src = el.currentSrc || el.src;
+        big.autoplay = big.muted = big.loop = big.playsInline = true;
+      } else {
+        big = document.createElement('img');
+        big.src = el.currentSrc || el.src;
+        big.alt = el.alt;
+      }
+      box.innerHTML = '';
+      box.appendChild(big);
+      box.classList.add('show');
+    });
+  });
+  box.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body></html>
